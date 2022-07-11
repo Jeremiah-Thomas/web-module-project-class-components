@@ -7,15 +7,17 @@ export default class Form extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.props.onSubmit}>
-        <input
-          type="text"
-          value={this.props.inputText}
-          onChange={this.props.onChange}
-        />
-        <button type="submit">Add</button>
-        <button onClick={this.props.clear}>Clear Completed</button>
-      </form>
+      <>
+        <form onSubmit={this.props.onSubmit}>
+          <input
+            type="text"
+            value={this.props.inputText}
+            onChange={this.props.onChange}
+          />
+          <input type="submit" value="Add" />
+          <button onClick={this.props.clearCompleted}>Clear Completed</button>
+        </form>
+      </>
     );
   }
 }

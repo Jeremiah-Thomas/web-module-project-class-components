@@ -40,6 +40,13 @@ export default class App extends React.Component {
     });
   };
 
+  clearCompleted = () => {
+    // if item is purchased (item.purchased is true) the filter out the item
+    this.setState({
+      todos: this.state.todos.filter((todo) => !todo.completed),
+    });
+  };
+
   render() {
     return (
       <div>
@@ -51,6 +58,7 @@ export default class App extends React.Component {
           onSubmit={this.addTodo}
           inputText={this.state.inputText}
           onChange={this.onChange}
+          clearCompleted={this.clearCompleted}
         />
       </div>
     );
